@@ -1,7 +1,15 @@
-const {constant, equipPosition, petGrade, itemGrade, unitType, heroType, enemyType} = require('./const.js');
-const {Unit} = require('./commonClass.js');
+const {
+  constant,
+  equipPosition,
+  petGrade,
+  itemGrade,
+  unitType,
+  heroType,
+  enemyType
+} = require("./const.js");
+const { Unit } = require("./commonClass.js");
 
-class Hero extends Unit{
+class Hero extends Unit {
   constructor(
     nickname,
     name,
@@ -16,7 +24,7 @@ class Hero extends Unit{
     skill = null,
     pet = null,
     buff = null,
-    nerf = null,
+    nerf = null
   ) {
     super(name, type, level, attack, health, defense, lucky);
     this._nickname = nickname;
@@ -27,20 +35,26 @@ class Hero extends Unit{
     this._buff = buff;
     this._nerf = nerf;
   }
-  setEquipment(){
-
-  }
-  toString(){
-    return `Nickname:${this._nickname}, Name:${this._name}, Type:${this.getType()}, Level:${this._level}, Exp:${this._exp}, Attack:${this._attack}, Health:${this._health}, Defense:${this._defense}, Lucky:${this._lucky}, Skill:${this._skill}, Pet:${this._pet}, Buff:${this._buff}, Nerf:${this._nerf}`;
+  setEquipment() {}
+  toString() {
+    return `Nickname:${this._nickname}, Name:${
+      this._name
+    }, Type:${this.getType()}, Level:${this._level}, Exp:${this._exp}, Attack:${
+      this._attack
+    }, Health:${this._health}, Defense:${this._defense}, Lucky:${
+      this._lucky
+    }, Skill:${this._skill}, Pet:${this._pet}, Buff:${this._buff}, Nerf:${
+      this._nerf
+    }`;
   }
 }
 
-let hero = new Hero('anpigon', 'knight', 'hero', 1, 2, 3, 4);
+let hero = new Hero("anpigon", "knight", "hero", 1, 2, 3, 4);
 console.log(hero.getName());
 console.log(hero.getType());
 console.log(hero.toString());
 hero.levelUp(5);
-console.log('Level Up(5)!!!');
+console.log("Level Up(5)!!!");
 console.log(hero.toString());
 
-module.exports = {Hero};
+module.exports = { Hero };
