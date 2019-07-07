@@ -11,7 +11,7 @@ class Pet {
     pet = null
   ) {
     this.name = name;
-    this.type = type;
+    this.grade = grade;
     this.attack = attack;
     this.health = health;
     this.defense = defense;

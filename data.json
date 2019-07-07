@@ -1,0 +1,26 @@
+{
+  "account": "happyberrysboy",
+  "heros": {
+    "knight": {
+      "nickname": "1sama",
+      "level": 1,
+      "exp": 0,
+      "equipments": ["knife", "leather"],
+      "pet": { "name": "qutedragon", "level": 1, "exp": 0 }
+    },
+    "archer": {
+      "nickname": "angpigon",
+      "level": 2,
+      "exp": 1,
+      "equipments": ["damaged knife", "damaged leather"],
+      "pet": { "name": "qutedog", "level": 2, "exp": 1 }
+    },
+    "mage": {
+      "nickname": "oldbijohn",
+      "level": 3,
+      "exp": 2,
+      "equipments": ["elite knife", "elite leather"],
+      "pet": { "name": "pat cat", "level": 3, "exp": 2 }
+    }
+  }
+}

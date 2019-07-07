@@ -1,24 +1,27 @@
 const {
   constant,
+  equipPosition,
   petGrade,
   itemGrade,
   unitType,
   heroType,
   enemyType
 } = require("./const.js");
+const db = require("../data.json");
 
 class Account {
   constructor(
     account,
-    lastBirthTime = new Date().toLocaleString(),
-    knightLv = 1,
-    archerLv = 1,
-    mageLv = 1,
-    itemList = []
+    heros = {},
+    lastBirthTime = new Date().toLocaleString()
   ) {
     this._account = account;
     this._lastBirthTime = lastBirthTime;
-    this._itemList = itemList;
+    this._heros = heros;
+
+    this._knight = heros[heroType.properties[heroType.knight].name];
+    this._archer = heros[heroType.properties[heroType.archer].name];
+    this._mage = heros[heroType.properties[heroType.mage].name];
   }
   getAccount() {
     return this._account;
@@ -28,12 +31,23 @@ class Account {
   }
   setCurrentStatus() {}
   toString() {
-    return `Name:${this._name}, Type:${this.getType()}, Level:${
-      this._level
-    }, Attack:${this._attack}, Health:${this._health}, Defense:${
-      this._defense
-    }, Lucky:${this._lucky}`;
+    console.log(heroType["knight"]);
+    console.log(heroType.properties[0].name);
+    console.log(heroType.properties[heroType.knight].name);
+    console.log(this._knight.nickname);
+    console.log(this._archer.nickname);
+    console.log(this._mage.nickname);
+    // console.log(
+    //   `Account:${
+    //     this._account
+    //   }, LastBirthTime:${this.getLastBirthTime()}, KnightLv:${
+    //     this._knightLv
+    //   }, ArcherLv:${this._archerLv}, MageLv:${this._mageLv}, ItemList:${
+    //     this._itemList
+    //   }`
+    // );
   }
 }
 
-module.exports = { Unit };
+const accout = new Account(db.account, db.heros);
+accout.toString();
